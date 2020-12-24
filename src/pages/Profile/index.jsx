@@ -3,6 +3,7 @@ import styles from './Profile.module.css'
 
 import img from '../../assets/img.jpeg';
 import gitLink from '../../assets/gitLink.png';
+import { MyPosts } from '../../components/index';
 
 export function Profile() {
     return (
@@ -11,13 +12,7 @@ export function Profile() {
             <div className={styles.linkContainer}>
                 <a href='https://github.com/BaronHandsome'><img src={gitLink} className={styles.gitLink} /></a>
             </div>
-            <div>ava + desc</div>
-            <div>
-                My posts
-                <div>New post</div>
-                <div>Post 1</div>
-                <div>Post 2</div>
-            </div>
+            <MyPosts />
         </div>
     );
 };

@@ -1,21 +1,25 @@
 .nav {
 	grid-area: n;
 	background-color: rgba(54, 70, 77, 1);
+	border: 1px solid #fff;
+	position: fixed;
+	bottom: 0;
+	width: 90%;
+	z-index: 1;
 }
 
 .navLinks {
 	list-style: none;
 	display: flex;
-	flex-direction: column;
-	border-top: 1px solid #fff;
+	justify-content: space-around;
 }
 
 .linkBlock {
 	height: 40px;
+	width: 100px;
 	display: flex;
 	align-items: center;
-	padding-left: 20px;
-	border-bottom: 1px solid #fff;
+	justify-content: center;
 	transition: 500ms;
 	cursor: pointer;
 }

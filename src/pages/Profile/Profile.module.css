@@ -3,6 +3,8 @@
 	grid-area: c;
 	background-color: rgba(54, 70, 77, 1);
 	color: #fff;
+	border: 1px solid #fff;
+	width: 100%;
 }
 
 .mainImg {

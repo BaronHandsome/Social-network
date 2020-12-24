@@ -8,9 +8,7 @@ export function Header() {
 
     return (
         <header className={styles.header}>
-            <div className={styles.logoContainer}>
                 <img src={logo} className={styles.logo} />
-            </div>
         </header>
     );
 };

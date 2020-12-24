@@ -1,0 +1,19 @@
+.header {
+	grid-area: h;
+	background-color: rgba(54, 70, 77, 1);
+	border: 1px solid #fff;
+	position: fixed;
+	top: 0;
+	height: 70px;
+	width: 90%;
+	z-index: 1;
+}
+
+.header img {
+	width: 160px;
+	max-height: 100%;
+}
+
+.logo {
+	background-color: #fff;
+}

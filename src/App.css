@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	padding: 0 5% 0 5%;
 }
 ol, ul {
 	list-style: none;
@@ -46,12 +47,24 @@ body {
 	background-color: #808080;
 }
 
-.app-wrapper {
+/* .app-wrapper {
 	display: grid;
 
 	grid-template-areas: 
 	'h h'
 	'n c';
+	grid-template-rows: 70px 1fr;
+	grid-template-columns: 2fr 10fr;
+	grid-gap: 10px;
+} */
+
+.app-wrapper {
+	display: grid;
+
+	grid-template-areas: 
+	'h h'
+	'n n'
+	'c c';
 	grid-template-rows: 70px 1fr;
 	grid-template-columns: 2fr 10fr;
 	grid-gap: 10px;

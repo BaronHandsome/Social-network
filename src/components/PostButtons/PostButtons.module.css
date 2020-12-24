@@ -1,0 +1,9 @@
+.btnContainer {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.actionIcon{
+    width: 100%;
+}
