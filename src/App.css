@@ -69,3 +69,12 @@ body {
 	grid-template-columns: 2fr 10fr;
 	grid-gap: 10px;
 }
+
+.app-wrapper-content {
+	grid-area: c;
+	background-color: rgba(54, 70, 77, 1);
+	width: 100%;
+	color: #fff;
+	border: 1px solid #fff;
+	min-height: 84vh;
+}

@@ -1,6 +1,10 @@
 export { Header } from '../mainComponents/Header';
 export { Navbar } from '../mainComponents/Navbar';
 export { Profile } from '../pages/Profile';
+export { Dialogs } from '../pages/Dialogs';
+export { Music } from '../pages/Music';
+export { News } from '../pages/News';
+export { Settings } from '../pages/Settings';
 export { MyPosts } from './MyPosts/';
 export { Button } from './Button/';
 export { Post } from './Post/';

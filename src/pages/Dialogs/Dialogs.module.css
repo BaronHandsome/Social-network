@@ -1,0 +1,7 @@
+.dialogsContainer {
+    font-size: 1.3em;
+}
+
+.dialogsContainer * {
+    margin: 0 20px;
+}
