@@ -1,0 +1,19 @@
+.header {
+	grid-area: h;
+	background-color: rgba(54, 70, 77, 1);
+	padding: 0 5%;
+}
+
+.header img {
+	width: 100%; 
+}
+
+.logoContainer {
+	height: 100%;
+	width: 162px;
+	background-color: #fff;
+}
+
+.logo {
+	color: rgba(54, 70, 77, 1);
+}

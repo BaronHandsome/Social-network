@@ -1,0 +1,31 @@
+.nav {
+	grid-area: n;
+	background-color: rgba(54, 70, 77, 1);
+}
+
+.navLinks {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	border-top: 1px solid #fff;
+}
+
+.linkBlock {
+	height: 40px;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+	border-bottom: 1px solid #fff;
+	transition: 500ms;
+	cursor: pointer;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.5em;
+}
+
+.linkBlock:hover {
+	background-color: #a0a0a0;
+}
