@@ -1,0 +1,15 @@
+.content {
+	position: relative;
+}
+
+.mainImg {
+	max-width: 100%;
+}
+
+.personDescription {
+    max-width: 90%;
+    margin: 10px 5%;
+    white-space: normal;
+    word-wrap: break-word;
+    text-indent: 1.5em
+}

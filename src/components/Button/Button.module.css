@@ -7,4 +7,9 @@
     background-color: rgb(35, 47, 53);
     border: 1px solid #fff;
     cursor: pointer;
+    transition: 500ms;
+}
+
+.button:hover {
+    background-color: rgb(65, 86, 95);
 }

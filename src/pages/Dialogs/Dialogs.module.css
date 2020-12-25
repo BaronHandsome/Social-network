@@ -1,7 +1,57 @@
 .dialogsContainer {
     font-size: 1.3em;
+    display: grid;
+    grid-template-columns: 3fr 10fr;
 }
 
 .dialogsContainer * {
-    margin: 0 20px;
+    /* margin: 0 20px; */
+}
+
+.dialogs {
+    border-right: 1px solid #fff;
+}
+
+.dialog {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dialogsItems {
+    display: flex;
+    flex-direction: column;
+}
+
+.dialogBlock {
+    width: 90%;
+    padding-left: 10%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    transition: 500ms;
+    text-decoration: none;
+}
+
+.dialogBlock:hover {
+    background-color: rgb(65, 86, 95);
+}
+
+.dialogBlock.active {
+    background-color: #a0a0a0;
+}
+
+.dialogBlock.active .dialog {
+    color: gold;
+}
+
+.messages {
+    padding: 10px 5%;
+}
+
+.message {
+    height: 40px;
+}
+
+.active {
+    color: gold;
 }
