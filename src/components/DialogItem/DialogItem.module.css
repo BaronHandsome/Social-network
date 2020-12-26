@@ -1,0 +1,30 @@
+.dialogBlock {
+    width: 90%;
+    padding-left: 10%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    transition: 500ms;
+    text-decoration: none;
+}
+
+.dialogBlock:hover {
+    background-color: rgb(65, 86, 95);
+}
+
+.dialogBlock.active {
+    background-color: #a0a0a0;
+}
+
+.dialogBlock.active .dialog {
+    color: gold;
+}
+
+.dialog {
+    color: #fff;
+    text-decoration: none;
+}
+
+.active {
+    color: gold;
+}

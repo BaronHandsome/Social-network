@@ -5,7 +5,9 @@ export { Dialogs } from '../pages/Dialogs/';
 export { Music } from '../pages/Music/';
 export { News } from '../pages/News/';
 export { Settings } from '../pages/Settings/';
-export { ProfileInfo } from '../components/ProfileInfo/'
+export { ProfileInfo } from '../components/ProfileInfo/';
+export { DialogItem } from '../components/DialogItem/';
+export { Message } from '../components/Message/';
 export { MyPosts } from './MyPosts/';
 export { Button } from './Button/';
 export { Post } from './Post/';
