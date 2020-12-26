@@ -3,11 +3,11 @@ import styles from './Profile.module.css'
 
 import { MyPosts, ProfileInfo } from '../../components/index';
 
-export function Profile() {
+export function Profile({ posts }) {
     return (
         <div className={styles.content}>
             <ProfileInfo />
-            <MyPosts />
+            <MyPosts posts={posts} />
         </div>
     );
 };
