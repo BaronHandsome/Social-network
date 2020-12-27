@@ -1,53 +1,55 @@
+import { rerender } from "../render";
+
 export let state = {
     profilePage: {
         posts: [
             {
                 id: 1,
-                message: 'Post 1'
+                post: 'Post 1'
             },
             {
                 id: 2,
-                message: 'Post 2'
+                post: 'Post 2'
             },
             {
                 id: 3,
-                message: 'Post 3'
+                post: 'Post 3'
             },
             {
                 id: 4,
-                message: 'Post 4'
+                post: 'Post 4'
             },
             {
                 id: 5,
-                message: 'Post 5'
+                post: 'Post 5'
             },
             {
                 id: 6,
-                message: 'Post 6'
+                post: 'Post 6'
             },
             {
                 id: 7,
-                message: 'Post 7'
+                post: 'Post 7'
             },
             {
                 id: 8,
-                message: 'Post 8'
+                post: 'Post 8'
             },
             {
                 id: 9,
-                message: 'Post 9'
+                post: 'Post 9'
             },
             {
                 id: 10,
-                message: 'Post 10'
+                post: 'Post 10'
             },
             {
                 id: 11,
-                message: 'Post 11'
+                post: 'Post 11'
             },
             {
                 id: 12,
-                message: 'Post 12'
+                post: 'Post 12'
             }
         ]
     },
@@ -199,3 +201,22 @@ export let state = {
     },
 };
 
+export let addPost = (post) => {
+    let newPost = {
+        id: state.profilePage.posts.length + 1,
+        post: post
+    };
+    state.profilePage.posts.push(newPost);
+
+    rerender(state);
+};
+
+export let addMessage = (message) => {
+    let newMessage = {
+        id: state.dialogsPage.messages.length + 1,
+        message: message
+    };
+    state.dialogsPage.messages.push(newMessage);
+
+    rerender(state);
+};

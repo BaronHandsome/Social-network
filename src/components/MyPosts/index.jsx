@@ -4,17 +4,15 @@ import { Button, Post } from '../index';
 
 
 
-export function MyPosts({ posts }) {
-    let postsElements = posts.map(content => <Post content={content.message} />)
-
+export function MyPosts({ posts, addPost }) {
+    let postsElements = posts.map(content => <Post content={content.post} />)
 
     let textareaContent = React.createRef();
-
     function addNewPost(params) {
         let newPostContent = textareaContent.current.value;
-        alert(newPostContent)
+        addPost(newPostContent);
+        textareaContent.current.value = '';
     }
-
 
     return (
         <div className={styles.myPostsContainer}>
@@ -24,7 +22,7 @@ export function MyPosts({ posts }) {
                     <Button action={addNewPost} text='Add Post' />
                 </div>
             </div>
-            { postsElements}
+            { postsElements }
         </div>
     )
 }
