@@ -1,7 +1,12 @@
-.dialogsContainer {
+/* .dialogsContainer {
     font-size: 1.3em;
     display: grid;
     grid-template-columns: 3fr 10fr;
+} */
+
+.dialogsContainer {
+    font-size: 1.3em;
+    display: flex;
 }
 
 .dialogsContainer * {
@@ -10,6 +15,7 @@
 
 .dialogs {
     border-right: 1px solid #fff;
+    width: 30%;
 }
 
 .dialogsItems {
@@ -19,8 +25,34 @@
 
 .messages {
     padding: 10px 5%;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    width: 70%;
 }
 
 .active {
     color: gold;
+}
+
+.addNewMessageContainer {
+    position: sticky;
+    width: 100%;
+    right: 6%;
+    bottom: 43px;
+    height: 120px;
+    background-color: rgba(54, 70, 77, 1);
+}
+
+.addNewMessageContainer * {
+    width: 100%;
+}
+
+.buttonContainer {
+    width: 100.5%;
+}
+
+.messageArea {
+    width: 100%;
+    height: 80px;
 }

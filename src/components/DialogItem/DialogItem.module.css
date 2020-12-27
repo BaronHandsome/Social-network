@@ -1,7 +1,7 @@
 .dialogBlock {
     width: 90%;
     padding-left: 10%;
-    height: 40px;
+    height: 70px;
     display: flex;
     align-items: center;
     transition: 500ms;

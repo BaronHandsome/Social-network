@@ -3,11 +3,17 @@
 }
 
 .addPost {
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contentArea {
-    width: 95%;
+    width: 90%;
     padding: 5px 10px;
     font-size: 1.2em;
+}
+
+.buttonContainer {
+    width: 50%;
 }

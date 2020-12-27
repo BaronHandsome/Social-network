@@ -13,6 +13,12 @@ export function Navbar() {
                     <span className={styles.link}>Profile</span>
                 </NavLink>
                 <NavLink
+                    to='/friends'
+                    className={styles.linkBlock}
+                    activeClassName={styles.active}>
+                    <span className={styles.link}>Friends</span>
+                </NavLink>
+                <NavLink
                     to='/dialogs'
                     className={styles.linkBlock}
                     activeClassName={styles.active}>
