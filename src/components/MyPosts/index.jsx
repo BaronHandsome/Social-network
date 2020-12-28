@@ -17,7 +17,7 @@ export function MyPosts({ posts, addPost }) {
     return (
         <div className={styles.myPostsContainer}>
             <div className={styles.addPost}>
-                <textarea ref={textareaContent} className={styles.contentArea}></textarea>
+                <textarea ref={textareaContent} className={styles.contentArea} />
                 <div className={styles.buttonContainer}>
                     <Button action={addNewPost} text='Add Post' />
                 </div>

@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { addPost, addMessage, deleteThisPost } from './redux/state';
+import { addPost, addMessage } from './redux/state';
 
 export let rerender = (state) => {
     ReactDOM.render(
