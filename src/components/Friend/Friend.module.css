@@ -1,0 +1,33 @@
+.friendContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.friendContainer:hover {
+    background-color: rgb(65, 86, 95);
+}
+
+.imageContainer {
+    width: 100%;
+}
+
+.image {
+    width: 100%;
+    display: block;
+}
+
+.infoContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* .dropdown {
+    background-color: red;
+}
+
+.dropdown option {
+    height: 20px;
+} */

@@ -1,6 +1,7 @@
 export { Header } from '../mainComponents/Header/';
 export { Navbar } from '../mainComponents/Navbar/';
 export { Profile } from '../pages/Profile/';
+export { Friends } from '../pages/Friends/';
 export { Dialogs } from '../pages/Dialogs/';
 export { Music } from '../pages/Music/';
 export { News } from '../pages/News/';
@@ -14,3 +15,4 @@ export { Post } from './Post/';
 export { Avatar } from './Avatar/';
 export { RateButton } from './RateButton/';
 export { DeletePost, EditPost } from './PostButtons/';
+export { Friend } from './Friend/';
