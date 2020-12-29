@@ -20,14 +20,6 @@
 .infoContainer {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
 }
-
-/* .dropdown {
-    background-color: red;
-}
-
-.dropdown option {
-    height: 20px;
-} */

@@ -219,7 +219,8 @@ export let state = {
             {id: 16, name: 'User 16'},
             {id: 17, name: 'User 17'},
             {id: 18, name: 'User 18'},
-        ]
+        ],
+        dropdown: ['Group 1', 'Group 2', 'Group 3', 'Group 4']
     }
 };
 
