@@ -51,7 +51,8 @@ export let state = {
             //     id: 12,
             //     post: 'Post 12'
             // }
-        ]
+        ],
+        newPostText: 'some text',
     },
     dialogsPage: {
         dialogs: [
@@ -219,17 +220,21 @@ export let state = {
             {id: 16, name: 'User 16'},
             {id: 17, name: 'User 17'},
             {id: 18, name: 'User 18'},
+            
         ],
         dropdown: ['Group 1', 'Group 2', 'Group 3', 'Group 4']
     }
 };
 
-export let addPost = (post) => {
+window.state = state;
+
+export let addPost = () => {
     let newPost = {
         id: state.profilePage.posts.length + 1,
-        post: post
+        post: state.profilePage.newPostText
     };
     state.profilePage.posts.unshift(newPost);
+    state.profilePage.newPostText = ('')
     console.log(newPost)
 
     rerender(state);
@@ -243,4 +248,11 @@ export let addMessage = (message) => {
     state.dialogsPage.messages.push(newMessage);
 
     rerender(state);
-};
+}; 
+
+export let updateNewPost = (newText) => {
+    state.profilePage.newPostText = newText;
+    console.log(state.profilePage.newPostText)
+
+    rerender(state);
+}; 

@@ -2,7 +2,7 @@ import './App.css';
 import { Header, Navbar, Profile, Friends, Dialogs, Music, News, Settings } from './components/index';
 import { Route } from 'react-router-dom'
 
-function App({ state, addPost, addMessage, deleteThisPost }) {
+function App({ state, addPost, addMessage, updateNewPost }) {
 	return (
 		<div className='app-wrapper'>
 			<Header />
@@ -11,6 +11,7 @@ function App({ state, addPost, addMessage, deleteThisPost }) {
 				<Route path='/profile' render={() => <Profile
 					state={state.profilePage}
 					addPost={addPost}
+					updateNewPost={updateNewPost}
 				/>} />
 				<Route path='/friends' render={() => <Friends
 					state={state.friendsPage} />} />
