@@ -1,4 +1,10 @@
-import { rerender } from "../render";
+let rerender = () => {
+    console.log('State updated');
+};
+
+export function subscribe(observer) {
+    rerender = observer
+};
 
 export let state = {
     profilePage: {
@@ -233,11 +239,13 @@ export let addPost = () => {
         id: state.profilePage.posts.length + 1,
         post: state.profilePage.newPostText
     };
-    state.profilePage.posts.unshift(newPost);
-    state.profilePage.newPostText = ('')
-    console.log(newPost)
-
-    rerender(state);
+    if(state.profilePage.newPostText !== '') {
+        state.profilePage.posts.unshift(newPost);
+        state.profilePage.newPostText = ('')
+        console.log(newPost)
+    
+        rerender(state);
+    }
 };
 
 export let addMessage = (message) => {
@@ -245,9 +253,11 @@ export let addMessage = (message) => {
         id: state.dialogsPage.messages.length + 1,
         message: message
     };
-    state.dialogsPage.messages.push(newMessage);
-
-    rerender(state);
+    if(message !== '') {
+        state.dialogsPage.messages.push(newMessage);
+    
+        rerender(state);
+    }
 }; 
 
 export let updateNewPost = (newText) => {

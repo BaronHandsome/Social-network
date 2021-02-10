@@ -5,7 +5,7 @@ import { Button, Post } from '../index';
 
 
 export function MyPosts({ posts, addPost, postText, updateNewPost }) {
-    let postsElements = posts.map(content => <Post content={content.post} />)
+    let postsElements = posts.map(content => <Post key={content.id} content={content.post} />)
 
     let textareaContent = React.createRef();
     function addNewPost(params) {
