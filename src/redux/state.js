@@ -227,7 +227,7 @@ export let store = {
     getState() {
         return this._state;
     },
-    addPost() {
+    _addPost() {
         let newPost = {
             id: this._state.profilePage.posts.length + 1,
             post: this._state.profilePage.newPostText
@@ -240,7 +240,7 @@ export let store = {
             this.rerender(this._state);
         }
     },
-    addMessage(message) {
+    _addMessage(message) {
         let newMessage = {
             id: this._state.dialogsPage.messages.length + 1,
             message: message
@@ -251,9 +251,8 @@ export let store = {
             this.rerender(this._state);
         }
     },
-    updateNewPost(newText) {
+    _updateNewPost(newText) {
         this._state.profilePage.newPostText = newText;
-        console.log(this._state.profilePage.newPostText)
     
         this.rerender(this._state);
     },
@@ -262,5 +261,15 @@ export let store = {
     },
     subscribe(observer) {
         this.rerender = observer
+    },
+    dispatch(action) {
+        switch (action.type) {
+            case 'ADD-POST': this._addPost(); 
+            break;
+            case 'ADD-MESSAGE': this.addMessage();
+            break;
+            case 'UPDATE-NEW-POST': this._updateNewPostText(action.newText); 
+            break;
+        }
     }
 };

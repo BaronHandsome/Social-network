@@ -13,9 +13,9 @@ export let rerender = (state) => {
             <BrowserRouter>
                 <App
                     state={store.getState()}
-                    addPost={store.addPost.bind(store)}
-                    addMessage={store.addMessage.bind(store)}
-                    updateNewPost={store.updateNewPost.bind(store)}
+                    addPost={store._addPost.bind(store)}
+                    addMessage={store._addMessage.bind(store)}
+                    updateNewPost={store._updateNewPost.bind(store)}
                 />
             </BrowserRouter>
         </React.StrictMode>,
