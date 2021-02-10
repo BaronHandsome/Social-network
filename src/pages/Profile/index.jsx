@@ -3,15 +3,14 @@ import styles from './Profile.module.css'
 
 import { MyPosts, ProfileInfo } from '../../components/index';
 
-export function Profile({ state, addPost, updateNewPost }) {
+export function Profile({ state, dispatch }) {
     return (
         <div className={styles.content}>
             <ProfileInfo />
             <MyPosts
-                addPost={addPost}
+                dispatch={dispatch}
                 posts={state.posts}
                 postText={state.newPostText}
-                updateNewPost={updateNewPost}
             />
         </div>
     );

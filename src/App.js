@@ -2,7 +2,7 @@ import './App.css';
 import { Header, Navbar, Profile, Friends, Dialogs, Music, News, Settings } from './components/index';
 import { Route } from 'react-router-dom'
 
-function App({ state, addPost, addMessage, updateNewPost }) {
+function App({ state, dispatch }) {
 	return (
 		<div className='app-wrapper'>
 			<Header />
@@ -10,14 +10,13 @@ function App({ state, addPost, addMessage, updateNewPost }) {
 			<div className='app-wrapper-content'>
 				<Route path='/profile' render={() => <Profile
 					state={state.profilePage}
-					addPost={addPost}
-					updateNewPost={updateNewPost}
+					dispatch={dispatch}
 				/>} />
 				<Route path='/friends' render={() => <Friends
 					state={state.friendsPage} />} />
 				<Route path='/dialogs' render={() => <Dialogs
 					state={state.dialogsPage}
-					addMessage={addMessage}
+					dispatch={dispatch}
 				/>} />
 				<Route path='/news' render={() => <News />} />
 				<Route path='/music' render={() => <Music />} />

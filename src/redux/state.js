@@ -266,9 +266,9 @@ export let store = {
         switch (action.type) {
             case 'ADD-POST': this._addPost(); 
             break;
-            case 'ADD-MESSAGE': this.addMessage();
+            case 'ADD-MESSAGE': this._addMessage(action.message);
             break;
-            case 'UPDATE-NEW-POST': this._updateNewPostText(action.newText); 
+            case 'UPDATE-NEW-POST': this._updateNewPost(action.newText); 
             break;
         }
     }

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Dialogs.module.css';
 import { DialogItem, Message, Button } from '../../components/index'
 
-export function Dialogs({ state, addMessage }) {
+export function Dialogs({ state, dispatch }) {
 
     let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
     let messagesElements = state.messages.map(message => <Message message={message.message} />);
@@ -11,7 +11,8 @@ export function Dialogs({ state, addMessage }) {
 
     function addNewMessage(params) {
         let newMessageContent = textareaContent.current.value;
-        addMessage(newMessageContent);
+        let action = { type: 'ADD-MESSAGE', message: newMessageContent };
+        dispatch(action);
         textareaContent.current.value = '';
     }
 

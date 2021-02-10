@@ -4,17 +4,18 @@ import { Button, Post } from '../index';
 
 
 
-export function MyPosts({ posts, addPost, postText, updateNewPost }) {
+export function MyPosts({ posts, postText, dispatch }) {
     let postsElements = posts.map(content => <Post key={content.id} content={content.post} />)
 
     let textareaContent = React.createRef();
     function addNewPost(params) {
-        addPost();
+        dispatch({ type: 'ADD-POST' });
     }
 
     let onPostChange = () => {
         let newPostContent = textareaContent.current.value;
-        updateNewPost(newPostContent);
+        let action = { type: 'UPDATE-NEW-POST', newText: newPostContent };
+        dispatch(action);
     };
 
     return (
