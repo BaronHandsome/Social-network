@@ -1,3 +1,5 @@
+import { ADD_POST, UPDATE_NEW_POST, ADD_MESSAGE, UPDATE_NEW_MESSAGE } from '../components/consts';
+
 export let store = {
     _state: {
         profilePage: {
@@ -197,29 +199,30 @@ export let store = {
                     id: 30,
                     message: 'Hi'
                 },
-            ]
+            ],
+            newMessageText: 'some message',
         },
         friendsPage: {
             friend: [
-                {id: 1, name: 'User 1'},
-                {id: 2, name: 'User 2'},
-                {id: 3, name: 'User 3'},
-                {id: 4, name: 'User 4'},
-                {id: 5, name: 'User 5'},
-                {id: 6, name: 'User 6'},
-                {id: 7, name: 'User 7'},
-                {id: 8, name: 'User 8'},
-                {id: 9, name: 'User 9'},
-                {id: 10, name: 'User 10'},
-                {id: 11, name: 'User 11'},
-                {id: 12, name: 'User 12'},
-                {id: 13, name: 'User 13'},
-                {id: 14, name: 'User 14'},
-                {id: 15, name: 'User 15'},
-                {id: 16, name: 'User 16'},
-                {id: 17, name: 'User 17'},
-                {id: 18, name: 'User 18'},
-                
+                { id: 1, name: 'User 1' },
+                { id: 2, name: 'User 2' },
+                { id: 3, name: 'User 3' },
+                { id: 4, name: 'User 4' },
+                { id: 5, name: 'User 5' },
+                { id: 6, name: 'User 6' },
+                { id: 7, name: 'User 7' },
+                { id: 8, name: 'User 8' },
+                { id: 9, name: 'User 9' },
+                { id: 10, name: 'User 10' },
+                { id: 11, name: 'User 11' },
+                { id: 12, name: 'User 12' },
+                { id: 13, name: 'User 13' },
+                { id: 14, name: 'User 14' },
+                { id: 15, name: 'User 15' },
+                { id: 16, name: 'User 16' },
+                { id: 17, name: 'User 17' },
+                { id: 18, name: 'User 18' },
+
             ],
             dropdown: ['Group 1', 'Group 2', 'Group 3', 'Group 4']
         }
@@ -232,28 +235,37 @@ export let store = {
             id: this._state.profilePage.posts.length + 1,
             post: this._state.profilePage.newPostText
         };
-        if(this._state.profilePage.newPostText !== '') {
+        if (this._state.profilePage.newPostText !== '') {
             this._state.profilePage.posts.unshift(newPost);
             this._state.profilePage.newPostText = ('')
             console.log(newPost)
-        
+
             this.rerender(this._state);
         }
     },
-    _addMessage(message) {
+    _addMessage() {
         let newMessage = {
             id: this._state.dialogsPage.messages.length + 1,
-            message: message
+            message: this._state.dialogsPage.newMessageText
         };
-        if(message !== '') {
+        if (this._state.dialogsPage.newMessageText !== '') {
             this._state.dialogsPage.messages.push(newMessage);
-        
+            this._state.dialogsPage.newMessageText = ('');
+            console.log(newMessage);
+
             this.rerender(this._state);
         }
     },
     _updateNewPost(newText) {
         this._state.profilePage.newPostText = newText;
-    
+        console.log(this._state.profilePage.newPostText);
+
+        this.rerender(this._state);
+    },
+    _updateNewMessageText(newText) {
+        this._state.dialogsPage.newMessageText = newText
+        console.log(this._state.dialogsPage.newMessageText);
+
         this.rerender(this._state);
     },
     rerender() {
@@ -264,12 +276,26 @@ export let store = {
     },
     dispatch(action) {
         switch (action.type) {
-            case 'ADD-POST': this._addPost(); 
-            break;
-            case 'ADD-MESSAGE': this._addMessage(action.message);
-            break;
-            case 'UPDATE-NEW-POST': this._updateNewPost(action.newText); 
-            break;
+            case ADD_POST:
+                this._addPost();
+                break;
+            case ADD_MESSAGE:
+                this._addMessage();
+                break;
+            case UPDATE_NEW_POST:
+                this._updateNewPost(action.newText);
+                break;
+            case UPDATE_NEW_MESSAGE:
+                this._updateNewMessageText(action.newText);
+                break;
         }
     }
 };
+
+export const addPostActionCreator = () => ({ type: ADD_POST });
+
+export const updateNewPostActionCreator = (newPostContent) => ({ type: UPDATE_NEW_POST, newText: newPostContent });
+
+export const addMessageActionCreator = (newMessageContent) => ({ type: ADD_MESSAGE, message: newMessageContent });
+
+export const updateNewMessageActionCreator = (newMessageContent) => ({ type: UPDATE_NEW_MESSAGE, newText: newMessageContent});

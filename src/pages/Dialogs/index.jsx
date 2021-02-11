@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Dialogs.module.css';
-import { DialogItem, Message, Button } from '../../components/index'
+import { DialogItem, Message, Button, addMessageActionCreator, updateNewMessageActionCreator } from '../../components/index'
 
 export function Dialogs({ state, dispatch }) {
 
@@ -9,12 +9,15 @@ export function Dialogs({ state, dispatch }) {
 
     let textareaContent = React.createRef();
 
-    function addNewMessage(params) {
+    function addNewMessage() {
+        dispatch(addMessageActionCreator());
+    };
+
+    let onMessageChange = () => {
         let newMessageContent = textareaContent.current.value;
-        let action = { type: 'ADD-MESSAGE', message: newMessageContent };
+        let action = updateNewMessageActionCreator(newMessageContent);
         dispatch(action);
-        textareaContent.current.value = '';
-    }
+    };
 
     return (
         <div className={styles.dialogsContainer}>
@@ -26,7 +29,11 @@ export function Dialogs({ state, dispatch }) {
             <div className={styles.messages}>
                 {messagesElements}
                 <div className={styles.addNewMessageContainer}>
-                    <textarea ref={textareaContent} className={styles.messageArea}></textarea>
+                    <textarea
+                        value={state.newMessageText}
+                        onChange={onMessageChange}
+                        ref={textareaContent}
+                        className={styles.messageArea}></textarea>
                     <div className={styles.buttonContainer}>
                         <Button action={addNewMessage} text='Add message' />
                     </div>
