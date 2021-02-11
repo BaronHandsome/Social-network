@@ -7,7 +7,7 @@ export function DeletePost() {
 
     return (
         <div className={styles.btnContainer}>
-            <img className={styles.actionIcon} src={deletePost}></img>
+            <img className={styles.actionIcon} src={deletePost} alt='Delete post'></img>
         </div>
     );
 };
@@ -15,7 +15,7 @@ export function DeletePost() {
 export function EditPost() {
     return (
         <div className={styles.btnContainer}>
-        <img className={styles.actionIcon} src={editPost}></img>
+        <img className={styles.actionIcon} src={editPost} alt='Add post'></img>
     </div>
     );
 };

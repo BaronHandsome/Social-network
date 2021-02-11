@@ -8,7 +8,7 @@ export function Friend({ name }) {
     return (
         <div className={styles.friendContainer}>
             <div className={styles.imageContainer}>
-                <img src={friendIcon} className={styles.image}></img>
+                <img src={friendIcon} className={styles.image} alt='Friend'></img>
             </div>
             <div className={styles.infoContainer}>
                 <p>{name}</p>

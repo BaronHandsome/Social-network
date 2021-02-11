@@ -8,7 +8,7 @@ export function Header() {
 
     return (
         <header className={styles.header}>
-                <img src={logo} className={styles.logo} />
+                <img src={logo} className={styles.logo} alt='Header' />
         </header>
     );
 };

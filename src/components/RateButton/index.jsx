@@ -12,11 +12,11 @@ export function RateButton() {
     return (
         <div className={styles.container}>
             <div onClick={() => setRateUp(rateUp + 1)}>
-                <img className={styles.rateSymbol} src={fingerUp}></img>
+                <img className={styles.rateSymbol} src={fingerUp} alt='Like'></img>
             </div>
             <span className={styles.rateNumber}>{rateUp}</span>
             <div className={styles.rateSymbol} onClick={() => setRateDown(rateDown + 1)}>
-                <img className={styles.rateSymbol} src={fingerDown}></img>
+                <img className={styles.rateSymbol} src={fingerDown} alt='Dislike'></img>
             </div>
             <span className={styles.rateNumber}>{rateDown}</span>
         </div>

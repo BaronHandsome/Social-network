@@ -6,7 +6,7 @@ import img from '../../assets/img.jpeg';
 export function ProfileInfo() {
     return (
         <div className={styles.content}>
-            <img src={img} className={styles.mainImg} />
+            <img src={img} className={styles.mainImg} alt='User' />
             <p className={styles.personDescription}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quos enim minima temporibus consectetur tenetur eligendi. Asperiores, odit consequatur est, consectetur dolore officiis beatae at harum consequuntur itaque illum rerum?
             Eos fugit, veritatis, harum ullam, cum aliquam dolor vero magnam illo commodi quae! Nesciunt praesentium illo consectetur? Obcaecati unde nam eligendi quia possimus delectus, iste sit quisquam quidem officia. Perspiciatis!
             Rerum, sunt laborum nemo odit inventore voluptatem unde esse vero, placeat quasi molestiae debitis nostrum ipsam modi beatae! Repellendus possimus beatae perspiciatis dicta ea consequuntur obcaecati, voluptatibus expedita cum saepe.
