@@ -1,58 +1,9 @@
-import { ADD_POST, UPDATE_NEW_POST, ADD_MESSAGE, UPDATE_NEW_MESSAGE } from '../components/consts';
+import { profileReducer, dialogsReducer } from '../components/index';
 
 export let store = {
     _state: {
         profilePage: {
-            posts: [
-                // {
-                //     id: 1,
-                //     post: 'Post 1'
-                // },
-                // {
-                //     id: 2,
-                //     post: 'Post 2'
-                // },
-                // {
-                //     id: 3,
-                //     post: 'Post 3'
-                // },
-                // {
-                //     id: 4,
-                //     post: 'Post 4'
-                // },
-                // {
-                //     id: 5,
-                //     post: 'Post 5'
-                // },
-                // {
-                //     id: 6,
-                //     post: 'Post 6'
-                // },
-                // {
-                //     id: 7,
-                //     post: 'Post 7'
-                // },
-                // {
-                //     id: 8,
-                //     post: 'Post 8'
-                // },
-                // {
-                //     id: 9,
-                //     post: 'Post 9'
-                // },
-                // {
-                //     id: 10,
-                //     post: 'Post 10'
-                // },
-                // {
-                //     id: 11,
-                //     post: 'Post 11'
-                // },
-                // {
-                //     id: 12,
-                //     post: 'Post 12'
-                // }
-            ],
+            posts: [],
             newPostText: 'some text',
         },
         dialogsPage: {
@@ -230,44 +181,6 @@ export let store = {
     getState() {
         return this._state;
     },
-    _addPost() {
-        let newPost = {
-            id: this._state.profilePage.posts.length + 1,
-            post: this._state.profilePage.newPostText
-        };
-        if (this._state.profilePage.newPostText !== '') {
-            this._state.profilePage.posts.unshift(newPost);
-            this._state.profilePage.newPostText = ('')
-            console.log(newPost)
-
-            this.rerender(this._state);
-        }
-    },
-    _addMessage() {
-        let newMessage = {
-            id: this._state.dialogsPage.messages.length + 1,
-            message: this._state.dialogsPage.newMessageText
-        };
-        if (this._state.dialogsPage.newMessageText !== '') {
-            this._state.dialogsPage.messages.push(newMessage);
-            this._state.dialogsPage.newMessageText = ('');
-            console.log(newMessage);
-
-            this.rerender(this._state);
-        }
-    },
-    _updateNewPost(newText) {
-        this._state.profilePage.newPostText = newText;
-        console.log(this._state.profilePage.newPostText);
-
-        this.rerender(this._state);
-    },
-    _updateNewMessageText(newText) {
-        this._state.dialogsPage.newMessageText = newText
-        console.log(this._state.dialogsPage.newMessageText);
-
-        this.rerender(this._state);
-    },
     rerender() {
         console.log('State updated');
     },
@@ -275,27 +188,7 @@ export let store = {
         this.rerender = observer
     },
     dispatch(action) {
-        switch (action.type) {
-            case ADD_POST:
-                this._addPost();
-                break;
-            case ADD_MESSAGE:
-                this._addMessage();
-                break;
-            case UPDATE_NEW_POST:
-                this._updateNewPost(action.newText);
-                break;
-            case UPDATE_NEW_MESSAGE:
-                this._updateNewMessageText(action.newText);
-                break;
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogs = dialogsReducer(this._state.dialogsPage, action);
     }
 };
-
-export const addPostActionCreator = () => ({ type: ADD_POST });
-
-export const updateNewPostActionCreator = (newPostContent) => ({ type: UPDATE_NEW_POST, newText: newPostContent });
-
-export const addMessageActionCreator = (newMessageContent) => ({ type: ADD_MESSAGE, message: newMessageContent });
-
-export const updateNewMessageActionCreator = (newMessageContent) => ({ type: UPDATE_NEW_MESSAGE, newText: newMessageContent});

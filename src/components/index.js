@@ -16,7 +16,9 @@ export { Avatar } from './Avatar/';
 export { RateButton } from './RateButton/';
 export { DeletePost, EditPost } from './PostButtons/';
 export { Friend } from './Friend/';
-export { addPostActionCreator } from '../redux/state';
-export { updateNewPostActionCreator } from '../redux/state';
-export { addMessageActionCreator } from '../redux/state';
-export { updateNewMessageActionCreator } from '../redux/state'
+export { addPostActionCreator } from '../redux/profileReducer';
+export { updateNewPostActionCreator } from '../redux/profileReducer';
+export { addMessageActionCreator } from '../redux/dialogsReducer';
+export { updateNewMessageActionCreator } from '../redux/dialogsReducer';
+export { profileReducer } from '../redux/profileReducer';
+export { dialogsReducer } from '../redux/dialogsReducer';
