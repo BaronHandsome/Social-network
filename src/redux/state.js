@@ -181,9 +181,7 @@ export let store = {
     getState() {
         return this._state;
     },
-    rerender() {
-        console.log('State updated');
-    },
+    rerender() {},
     subscribe(observer) {
         this.rerender = observer
     },

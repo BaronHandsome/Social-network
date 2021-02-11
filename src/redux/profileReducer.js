@@ -3,7 +3,12 @@ import { store } from '../redux/state';
 export const ADD_POST = 'ADD-POST';
 export const UPDATE_NEW_POST = 'UPDATE-NEW-POST';
 
-export const profileReducer = (state, action) => {
+let initialState = {
+        posts: [],
+        newPostText: 'some text'
+};
+
+export const profileReducer = (state = initialState, action) => {
     const _addPost = () => {
         let newPost = {
             id: state.posts.length + 1,
@@ -19,8 +24,8 @@ export const profileReducer = (state, action) => {
     };
 
     const _updateNewPost = (newText) => {
-        store._state.profilePage.newPostText = newText;
-        console.log(store._state.profilePage.newPostText);
+        state.newPostText = newText;
+        console.log(state.newPostText);
 
         store.rerender(store._state);
     };
@@ -32,9 +37,11 @@ export const profileReducer = (state, action) => {
         case UPDATE_NEW_POST:
             _updateNewPost(action.newText);
             break;
+        default:
+            return state;
     }
 
-            return state;
+    return state;
 };
 
 export const addPostActionCreator = () => ({ type: ADD_POST });
